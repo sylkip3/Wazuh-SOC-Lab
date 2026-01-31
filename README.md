@@ -63,5 +63,7 @@ sudo chown -R wazuh-indexer:wazuh-indexer /var/lib/wazuh-indexer
 sudo apt-get purge wazuh-manager -y
 
 sudo rm -rf /var/ossec
+Service Persistence
+To ensure high availability of the SOC environment, all Wazuh components were configured as system services using systemctl. This ensures that in the event of a power failure or VM restart, the Indexer, Manager, and Dashboard initialize automatically without manual intervention.
 
 
