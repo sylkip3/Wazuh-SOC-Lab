@@ -1,7 +1,7 @@
-Resilient Wazuh SOC Lab & Threat Monitoring Environment
+Wazuh SOC Lab & Threat Monitoring Environment
 
 Project Overview
-This project documents the end-to-end deployment of a **Security Operations Center (SOC)** laboratory using the **Wazuh 4.9.2** stack. The environment is designed to simulate real-world cyberattacks and monitoring by networking an attacker (**Kali Linux**), a vulnerable target (**Metasploitable 2**), and a central monitoring server (**Ubuntu 24.04**) within a hardened virtual infrastructure.
+This project documents the end-to-end deployment of a **Security Operations Center (SOC)** lab using the **Wazuh 4.9.2** stack. The environment is designed to simulate real-world cyberattacks and monitoring by networking an attacker (**Kali Linux**), a vulnerable target (**Metasploitable 2**), and a central monitoring server (**Ubuntu 24.04**) within a hardened virtual infrastructure.
 
 > **Note:** For a comprehensive, step-by-step walkthrough with raw logs and additional screenshots, please refer to the [Full Project Documentation Word File](./Documentation/Sylvester_Wazuh_Lab_Walkthrough.docx).
 
@@ -26,9 +26,6 @@ To bypass NAT isolation and manage the SOC from the Windows host, the following 
 * **Wazuh Dashboard:** Host Port `4433` → Guest Port `443`
 * **SSH Access:** Host Port `5555` → Guest Port `22`
 * **Firewall Persistence:** Configured Ubuntu `ufw` to permit traffic on port `443/tcp`.
-
----
-
 Engineering Challenges & Solutions
 A significant portion of this project involved navigating infrastructure-level deadlocks during the Wazuh installation:
 
@@ -55,4 +52,5 @@ sudo chown -R wazuh-indexer:wazuh-indexer /var/lib/wazuh-indexer
 
 # Repairing DPKG & OSSEC
 sudo apt-get purge wazuh-manager -y
+
 sudo rm -rf /var/ossec
