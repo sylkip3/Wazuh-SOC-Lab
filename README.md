@@ -25,6 +25,8 @@ Technical Architecture
 To bypass NAT isolation and manage the SOC from the Windows host, the following **Port Forwarding** rules were implemented:
 * **Wazuh Dashboard:** Host Port `4433` → Guest Port `443`
 * **SSH Access:** Host Port `5555` → Guest Port `22`
+  <img width="893" height="812" alt="image" src="https://github.com/user-attachments/assets/451b807c-b215-4551-bd0c-2d9c19dc4a1b" />
+
 * **Firewall Persistence:** Configured Ubuntu `ufw` to permit traffic on port `443/tcp`.
 Engineering Challenges & Solutions
 A significant portion of this project involved navigating infrastructure-level deadlocks during the Wazuh installation:
@@ -54,3 +56,4 @@ sudo chown -R wazuh-indexer:wazuh-indexer /var/lib/wazuh-indexer
 sudo apt-get purge wazuh-manager -y
 
 sudo rm -rf /var/ossec
+
